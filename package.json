@@ -1,0 +1,16 @@
+{
+  "name": "graduate_project",
+  "version": "1.0.0",
+  "description": "a single page app - vue2.0 webpack gulp",
+  "main": "index.js",
+  "scripts": {
+    "dev": "gulp webpack-dev --gulpfile build/gulpfile.js"
+  },
+  "keywords": [
+    "webpack",
+    "gulp",
+    "vue2.0"
+  ],
+  "author": "Louis",
+  "license": "ISC"
+}

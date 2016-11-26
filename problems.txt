@@ -1,0 +1,10 @@
+webpack.config.dev.js和gulpfile已经配置好，package.json也初始化了。
+问题是版本：vue1.0和vue2.0之间的区别使得目前下载的为vue1.0。而与vue相关的插件也要进行修改，如vue-router，vue-source和vue-transform-compiler等等都要使用相应的版本。
+gulp-uglify进行压缩的时候，路径可以使用一般的方式，如果没有文件压缩出来，应该是因为文件太小，不被压缩。
+
+目前状态：
+可以跑通简单的new Vue（{el:"#id"})，但还不能集合单文件类型的开发。
+
+目前遗留问题：
+1.import本地 ‘***.vue’ 文件时，经常找不到相应的module，不知道是不是路径问题。
+2.webpack.optimize.CommonsChunkPlugin将会导致一个未定义的对象，报错。
