@@ -2,51 +2,36 @@
 	<div class="x-slide-bar">
         <div class="x-container" v-show="show">
             <div class="x-logo">
-                <div class="x-portrait">
+                <div class="x-portrait" @click="showDialog">
                     <img src="../../assets/logo.png" alt="Logo">
                 </div>
+                <x-dialog title="登录" v-model="login">hello</x-dialog>
             </div>
             <ul class="x-menu">
-                <li>
-                    <router-link class="router-link" tag="div" to="/home">
-                        <span class="icon-home"></span>首  页
-                    </router-link>
-                </li>
-                <li>
-                    <router-link class="router-link" tag="div" to="/student">
-                        <span class="icon-profile"></span>学籍信息
-                    </router-link>
-                </li>
-                <li>
-                    <router-link class="router-link" tag="div" to="/major">
-                        <span class="icon-svg"></span>专业信息
-                    </router-link>
-                </li>
-                <li>
-                    <router-link class="router-link" tag="div" to="/class">
-                        <span class="icon-books"></span>课程信息
-                    </router-link>
-                </li>
-                <li>
-                    <router-link class="router-link" tag="div" to="/grade">
-                        <span class="icon-spell-check"></span>成绩信息
-                    </router-link>
-                </li>
-                <li>
-                    <router-link class="router-link" tag="div" to="/graduation">
-                        <span class="icon-user-tie"></span>毕业信息
-                    </router-link>
-                </li>
-                <li>
-                    <router-link class="router-link" tag="div" to="/poverty">
-                        <span class="icon-paypal"></span>贫困信息
-                    </router-link>
-                </li>
-                <li>
-                    <router-link class="router-link" tag="div" to="/system">
-                        <span class="icon-cog"></span>系统账户
-                    </router-link>
-                </li>
+                <router-link tag="li" to="/home">
+                    <span class="icon-home"></span>首  页
+                </router-link>
+                <router-link tag="li" to="/student">
+                    <span class="icon-profile"></span>学籍信息
+                </router-link>
+                <router-link tag="li" to="/major">
+                    <span class="icon-svg"></span>专业信息
+                </router-link>
+                <router-link tag="li" to="/class">
+                    <span class="icon-books"></span>课程信息
+                </router-link>
+                <router-link tag="li" to="/grade">
+                    <span class="icon-spell-check"></span>成绩信息
+                </router-link>
+                <router-link tag="li" to="/graduation">
+                    <span class="icon-user-tie"></span>毕业信息
+                </router-link>
+                <router-link tag="li" to="/poverty">
+                    <span class="icon-paypal"></span>贫困信息
+                </router-link>
+                <router-link tag="li" to="/system">
+                    <span class="icon-cog"></span>系统账户
+                </router-link>
             </ul>
         </div>
         <div class="x-ctrl-btn" @click="show=!show">
@@ -56,10 +41,21 @@
 </template>
 
 <script type="text/javascript">
+import Dialog from '../common/Dialog'
+
 export default {
     data () {
         return {
-            show: true
+            show: true,
+            login: false
+        }
+    },
+    components: {
+        'x-dialog': Dialog
+    },
+    methods: {
+        showDialog () {
+            this.login = true
         }
     }
 }
@@ -84,7 +80,7 @@ export default {
                 border-radius: 50%;
                 img{
                     border-radius: 50%;
-                }            
+                }
             }
             .x-portrait:after{
                 position: absolute;
@@ -92,7 +88,7 @@ export default {
                 height: 100px;
                 width: 100px;
                 left: 0px;
-                opacity: 0.2;
+                opacity: 0.3;
                 border-radius: 50%;
                 background-color: #E2E5EA;
             }
@@ -105,14 +101,25 @@ export default {
                 opacity: 0;
                 border-radius: 50%;
             }
+            .x-portrait:active:after{
+                position: absolute;
+                content: '';
+                height: 100px;
+                width: 100px;
+                left: 0px;
+                opacity: 0.1;
+                border-radius: 50%;
+                background-color: #666666;
+            }
         }
         .x-menu{
             li{
-                padding-right: 30px;
+                padding-right: 50px;
                 padding-left: 20px;
                 height: 40px;
                 line-height: 40px;
                 border-radius: 5px;
+                cursor: pointer;
                 span{
                     margin-right: 10px;
                 }
@@ -150,11 +157,6 @@ export default {
     }
     .x-ctrl-btn:active{
         border-left-color: #B7BECB;
-    }
-    .router-link{
-        height: 100%;
-        width: 100%;
-        cursor: pointer;
     }
     .router-link-active{
         color:#20A0FF;

@@ -7,7 +7,11 @@ const SlideBar = resolve => require(['./components/layout/SlideBar'], resolve)
 const Header = resolve => require(['./components/layout/Header'], resolve)
 const Content = resolve => require(['./components/layout/Content'], resolve)
 
+// home page
+const Home = resolve => require(['./components/home'], resolve)
+
 const Hello = resolve => require(['./components/Hello'], resolve)
+const Dialog = resolve => require(['./components/common/Dialog'], resolve)
 
 const routes = [
     {
@@ -20,11 +24,11 @@ const routes = [
         children: [
             {
                 path: 'home',
-                component: Hello
+                component: Home
             },
             {
                 path: 'student',
-                component: Hello
+                component: Dialog
             },
             {
                 path: 'major',

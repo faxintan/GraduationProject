@@ -33,9 +33,15 @@
 }
 #app .g-left{
     height: calc(100% - 50px);
+    max-width: 297px;
+    border-left: 1px solid #686F79;
+    border-bottom: 1px solid #686F79;
 }
 #app .g-right{
-    flex-grow: 1;
+    flex: 1 1 auto;
     height: calc(100% - 50px);
+    width: calc(100% - 300px);
+    border-right: 1px solid #686F79;
+    border-bottom: 1px solid #686F79;
 }
 </style>
