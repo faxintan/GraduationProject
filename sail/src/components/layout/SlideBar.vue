@@ -5,10 +5,19 @@
                 <div class="x-portrait" @click="showDialog">
                     <img src="../../assets/logo.png" alt="Logo">
                 </div>
-                <x-dialog title="登录" v-model="login">hello</x-dialog>
+                <x-dialog title="登录" v-model="login">
+                    <label for="account">账号
+                        <input id="account" type="text" placeholder="请输入账号">
+                    </label>
+                    <br>
+                    <br>
+                    <label for="password">密码
+                        <input id="password" type="password" placeholder="请输入密码">
+                    </label>
+                </x-dialog>
             </div>
             <ul class="x-menu">
-                <router-link tag="li" to="/home">
+                <router-link tag="li" to="/">
                     <span class="icon-home"></span>首  页
                 </router-link>
                 <router-link tag="li" to="/student">

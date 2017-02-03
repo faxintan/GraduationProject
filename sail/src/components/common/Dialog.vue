@@ -37,12 +37,9 @@ export default {
     }
     .dialog{
         position: fixed;
-        margin-top: -250px;
-        margin-left: -250px;
-        height: 450px;
-        width: 500px;
-        top: 50%;
-        left: 50%;
+        width: 50%;
+        top: 20%;
+        left: 25%;
         z-index: 11;
         border-radius: 5px;
         .title{
@@ -60,7 +57,8 @@ export default {
             }
         }
         .content{
-            height: 380px;
+            padding: 20px;
+            text-align: center;
             border-left: 1px solid #CCCCCC;
             border-right: 1px solid #CCCCCC;
             background-color: #FFFFFF;

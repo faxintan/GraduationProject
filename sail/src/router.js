@@ -23,7 +23,7 @@ const routes = [
         },
         children: [
             {
-                path: 'home',
+                path: '',
                 component: Home
             },
             {
