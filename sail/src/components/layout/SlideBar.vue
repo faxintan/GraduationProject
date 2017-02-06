@@ -5,19 +5,21 @@
                 <div class="x-portrait" @click="showDialog">
                     <img src="../../assets/logo.png" alt="Logo">
                 </div>
-                <x-dialog title="登录" v-model="login">
-                    <label for="account">账号
-                        <input id="account" type="text" placeholder="请输入账号">
-                    </label>
-                    <br>
-                    <br>
-                    <label for="password">密码
-                        <input id="password" type="password" placeholder="请输入密码">
-                    </label>
+                <x-dialog title="登录" v-model="loginDialog">
+                    <x-input :id="'account'" :type="'text'" :placeholder="'请输入账号'"></x-input>
+                    <x-input :id="'password'" :type="'password'" :placeholder="'请输入密码'"></x-input>
+                    <div class="setting">
+                        <x-checkbox :id="'keep-psw'">记住密码</x-checkbox>
+                        <x-checkbox :id="'auto-login'">自动登录</x-checkbox>
+                    </div>
+                    <div class="login">
+                        <x-button :blue="true">登录</x-button>
+                        <x-button>注册</x-button>
+                    </div>
                 </x-dialog>
             </div>
             <ul class="x-menu">
-                <router-link tag="li" to="/">
+                <router-link tag="li" to="/home">
                     <span class="icon-home"></span>首  页
                 </router-link>
                 <router-link tag="li" to="/student">
@@ -51,20 +53,26 @@
 
 <script type="text/javascript">
 import Dialog from '../common/Dialog'
+import Button from '../common/Button'
+import Input from '../common/Input'
+import CheckBox from '../common/CheckBox'
 
 export default {
     data () {
         return {
             show: true,
-            login: false
+            loginDialog: false
         }
     },
     components: {
-        'x-dialog': Dialog
+        'x-dialog': Dialog,
+        'x-input': Input,
+        'x-button': Button,
+        'x-checkbox': CheckBox
     },
     methods: {
         showDialog () {
-            this.login = true
+            this.loginDialog = true
         }
     }
 }
@@ -119,6 +127,13 @@ export default {
                 opacity: 0.1;
                 border-radius: 50%;
                 background-color: #666666;
+            }
+            .setting{
+                text-align: right;
+            }
+            .login{
+                margin-top: 20px;
+                text-align: center;
             }
         }
         .x-menu{

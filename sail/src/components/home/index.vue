@@ -30,29 +30,56 @@
                 <div class="topic">用户消息<span class="icon-cog icon"></span></div>
                 <ul class="messages">
                     <li class="msg-num">本月共有9条用户消息</li>
-                    <li>xxx发来一条消息: "你好，我是学生管理系统有待完善！"<span class="date">10/28</span></li>
-                    <li>xxx发来一条消息: "你好，我是学生管理系统有待完善！"<span class="date">10/28</span></li>
-                    <li>xxx发来一条消息: "你好，我是学生管理系统有待完善！"<span class="date">10/28</span></li>
+                    <li>
+                        <div class="msg">xxx发来一条消息: "你好，我是学生管理系统有待完善！"</div>
+                        <div class="date">10/28</div>
+                    </li>
+                    <li>
+                        <div class="msg">xxx发来一条消息: "你好，我是学生管理系统有待完善！"</div>
+                        <div class="date">10/28</div>
+                    </li>
+                    <li>
+                        <div class="msg">xxx发来一条消息: "你好，我是学生管理系统有待完善！"</div>
+                        <div class="date">10/28</div>
+                    </li>
                 </ul>
                 <div class="more">查看更多 &gt;</div>
             </div>
             <div class="info-panel">
                 <div class="topic">用户消息<span class="icon-cog icon"></span></div>
                 <ul class="messages">
-                    <li class="number">本月共有9条用户消息</li>
-                    <li>xxx发来一条消息: "你好，我是学生管理系统有待完善！"<span class="date">10/28</span></li>
-                    <li>xxx发来一条消息: "你好，我是学生管理系统有待完善！"<span class="date">10/28</span></li>
-                    <li>xxx发来一条消息: "你好，我是学生管理系统有待完善！"<span class="date">10/28</span></li>
+                    <li class="msg-num">本月共有9条用户消息</li>
+                    <li>
+                        <div class="msg">xxx发来一条消息: "你好，我是学生管理系统有待完善！"</div>
+                        <div class="date">10/28</div>
+                    </li>
+                    <li>
+                        <div class="msg">xxx发来一条消息: "你好，我是学生管理系统有待完善！"</div>
+                        <div class="date">10/28</div>
+                    </li>
+                    <li>
+                        <div class="msg">xxx发来一条消息: "你好，我是学生管理系统有待完善！"</div>
+                        <div class="date">10/28</div>
+                    </li>
                 </ul>
                 <div class="more">查看更多 &gt;</div>
             </div>
             <div class="info-panel">
                 <div class="topic">用户消息<span class="icon-cog icon"></span></div>
                 <ul class="messages">
-                    <li class="number">本月共有9条用户消息</li>
-                    <li>xxx发来一条消息: "你好，我是学生管理系统有待完善！"<span class="date">10/28</span></li>
-                    <li>xxx发来一条消息: "你好，我是学生管理系统有待完善！"<span class="date">10/28</span></li>
-                    <li>xxx发来一条消息: "你好，我是学生管理系统有待完善！"<span class="date">10/28</span></li>
+                    <li class="msg-num">本月共有9条用户消息</li>
+                    <li>
+                        <div class="msg">xxx发来一条消息: "你好，我是学生管理系统有待完善！"</div>
+                        <div class="date">10/28</div>
+                    </li>
+                    <li>
+                        <div class="msg">xxx发来一条消息: "你好，我是学生管理系统有待完善！"</div>
+                        <div class="date">10/28</div>
+                    </li>
+                    <li>
+                        <div class="msg">xxx发来一条消息: "你好，我是学生管理系统有待完善！"</div>
+                        <div class="date">10/28</div>
+                    </li>
                 </ul>
                 <div class="more">查看更多 &gt;</div>
             </div>
@@ -201,23 +228,31 @@
             .messages{
                 li{
                     position: relative;
-                    padding: 0 5px;
-                    height: 38px;
-                    line-height: 18px;
-                    color:#4a4a4a;
-                    overflow:hidden;
-                    word-break: break-all;
+                    margin-left: 10px;
+                    .msg{
+                        padding-right: 50px;
+                        height: 40px;
+                        line-height: 40px;
+                        overflow: hidden;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                    }
+                    .date{
+                        position: absolute;
+                        width: 40px;
+                        height: 40px;
+                        line-height: 40px;
+                        top: 0;
+                        right: 0;
+                    }
+                }
+                .msg-num{
+                    height: 30px;
+                    line-height: 30px;
+                    color: #999999;
+                    overflow: hidden;
+                    white-space: nowrap;
                     text-overflow: ellipsis;
-                    display: -webkit-box;
-                    -webkit-line-clamp: 1;
-                    -webkit-box-orient: vertical;
-                }
-                li:first-child{
-                    line-height: 40px;
-                }
-                .date{
-                    position: absolute;
-                    right: 10px;
                 }
             }
             .more{
