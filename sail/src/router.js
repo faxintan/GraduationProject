@@ -10,8 +10,10 @@ const Content = resolve => require(['./components/layout/Content'], resolve)
 // home page
 const Home = resolve => require(['./components/home'], resolve)
 
+// status page
+const Status = resolve => require(['./components/status'], resolve)
+
 const Hello = resolve => require(['./components/Hello'], resolve)
-const Dialog = resolve => require(['./components/common/Dialog'], resolve)
 
 const routes = [
     {
@@ -27,8 +29,8 @@ const routes = [
                 component: Home
             },
             {
-                path: 'student',
-                component: Dialog
+                path: 'status',
+                component: Status
             },
             {
                 path: 'major',

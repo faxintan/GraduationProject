@@ -70,7 +70,7 @@ export default {
 .x-circle-container{
     position: relative;
     display: inline-block;
-    margin: 20px;
+    margin: 10px;
     width: 100px;
     height: 100px;
     line-height: 80px;

@@ -5,31 +5,50 @@
             <div class="teachers charts">
                 <span class="icon-user-tie"></span>
                 <div class="detail">
-                    <div class="percent">2000/1800</div>
-                    <div class="topic">公司总人数/上个月总人数</div>
+                    <div class="percent">2000/1200</div>
+                    <div class="topic">教师总人数/高级教师总人数</div>
                 </div>
             </div>
             <div class="students charts">
                 <span class="icon-user-tie"></span>
                 <div class="detail">
-                    <div class="percent">2000/1800</div>
-                    <div class="topic">公司总人数/上个月总人数</div>
+                    <div class="percent">8000/300</div>
+                    <div class="topic">学生总人数/优秀学生总人数</div>
                 </div>
             </div>
             <div class="graduations charts">
                 <span class="icon-user-tie"></span>
                 <div class="detail">
-                    <div class="percent">2000/1800</div>
-                    <div class="topic">公司总人数/上个月总人数</div>
+                    <div class="percent">1500/1000</div>
+                    <div class="topic">外勤总人数/优秀外勤总人数</div>
                 </div>
             </div>
         </div>
         <div class="x-reminder">
             <div class="title">工作提醒</div>
             <div class="info-panel">
-                <div class="topic">用户消息<span class="icon-cog icon"></span></div>
+                <div class="topic">学校公告<span class="icon-cog icon"></span></div>
                 <ul class="messages">
-                    <li class="msg-num">本月共有9条用户消息</li>
+                    <li class="msg-num">本月共有18条学校公告</i>
+                    <li>
+                        <div class="msg">xxx发来一条消息: "你好，我是学生管理系统有待完善！"</div>
+                        <div class="date">10/28</div>
+                    </li>
+                    <li>
+                        <div class="msg">xxx发来一条消息: "你好，我是学生管理系统有待完善！"</div>
+                        <div class="date">10/28</div>
+                    </li>
+                    <li>
+                        <div class="msg">xxx发来一条消息: "你好，我是学生管理系统有待完善！"</div>
+                        <div class="date">10/28</div>
+                    </li>
+                </ul>
+                <div class="more">查看更多 &gt;</div>
+            </div>
+            <div class="info-panel">
+                <div class="topic">学生排名<span class="icon-cog icon"></span></div>
+                <ul class="messages">
+                    <li class="msg-num">学生综合成绩排名前10</li>
                     <li>
                         <div class="msg">xxx发来一条消息: "你好，我是学生管理系统有待完善！"</div>
                         <div class="date">10/28</div>
@@ -48,26 +67,7 @@
             <div class="info-panel">
                 <div class="topic">用户消息<span class="icon-cog icon"></span></div>
                 <ul class="messages">
-                    <li class="msg-num">本月共有9条用户消息</li>
-                    <li>
-                        <div class="msg">xxx发来一条消息: "你好，我是学生管理系统有待完善！"</div>
-                        <div class="date">10/28</div>
-                    </li>
-                    <li>
-                        <div class="msg">xxx发来一条消息: "你好，我是学生管理系统有待完善！"</div>
-                        <div class="date">10/28</div>
-                    </li>
-                    <li>
-                        <div class="msg">xxx发来一条消息: "你好，我是学生管理系统有待完善！"</div>
-                        <div class="date">10/28</div>
-                    </li>
-                </ul>
-                <div class="more">查看更多 &gt;</div>
-            </div>
-            <div class="info-panel">
-                <div class="topic">用户消息<span class="icon-cog icon"></span></div>
-                <ul class="messages">
-                    <li class="msg-num">本月共有9条用户消息</li>
+                    <li class="msg-num">本月共有12条用户消息</li>
                     <li>
                         <div class="msg">xxx发来一条消息: "你好，我是学生管理系统有待完善！"</div>
                         <div class="date">10/28</div>
@@ -102,20 +102,30 @@
                 </div>
             </div>
             <div class="info-panel">
-                <div class="topic">员工生日<span class="icon-user-tie icon"></span></div>
+                <div class="topic">获奖教师<span class="icon-user-tie icon"></span></div>
                 <div class="content">
                     <div class="info">
-                        <img src="../../assets/logo.png" height="90px" width="90px">
-                        <p class="number">本月深研过生日员工人数（人）</p>
+                        <!-- <img src="../../assets/logo.png" height="90px" width="90px"> -->
+                        <pie-chart
+                            :percent="68"
+                            :color-a="'#B486F8'"
+                            :color-b="'#EEEEEE'"
+                            :color-c="'#FBC262'"></pie-chart>
+                        <p class="number">本月教师获奖人数 (人)</p>
                     </div>
                 </div>
             </div>
             <div class="info-panel">
-                <div class="topic">入职周年<span class="icon-user-tie icon"></span></div>
+                <div class="topic">获奖学生<span class="icon-user-tie icon"></span></div>
                 <div class="content">
                     <div class="info">
-                        <img src="../../assets/logo.png" height="90px" width="90px">
-                        <p class="number">本月深研满一年人数（人）</p>
+                        <!-- <img src="../../assets/logo.png" height="90px" width="90px"> -->
+                        <pie-chart
+                            :percent="80"
+                            :color-a="'#72B8FB'"
+                            :color-b="'#EEEEEE'"
+                            :color-c="'#89EB78'"></pie-chart>
+                        <p class="number">本月学生获奖人数 (人)</p>
                     </div>
                 </div>
             </div>
@@ -126,6 +136,16 @@
         </div>
     </div>
 </template>
+
+<script type="text/javascript">
+import PieChart from '../common/PieChart'
+
+export default {
+    components: {
+        'pie-chart': PieChart
+    }
+}
+</script>
 
 <style lang="less">
 .x-home-page{
@@ -310,11 +330,11 @@
                     display: inline-block;
                     padding: 0 20px;
                     color: #666666;
-                    .number{
-                        margin-top: 20px;
-                    }
+                    // .number{
+                    //     margin-top: 20px;
+                    // }
                     img{
-                        margin-bottom: 5px;
+                        margin-bottom: 15px;
                         border-radius: 50%;
                         border: 1px solid #cccccc;
                     }
@@ -332,9 +352,10 @@
     .copyright{
         position: relative;
         line-height: 25px;
-        text-align: center;
         font-family: Arial;
+        font-size: 14px;
         color: #666666;
+        text-align: center;
         bottom: -50px;
     }
 }

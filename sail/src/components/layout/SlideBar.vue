@@ -22,7 +22,7 @@
                 <router-link tag="li" to="/home">
                     <span class="icon-home"></span>首  页
                 </router-link>
-                <router-link tag="li" to="/student">
+                <router-link tag="li" to="/status">
                     <span class="icon-profile"></span>学籍信息
                 </router-link>
                 <router-link tag="li" to="/major">

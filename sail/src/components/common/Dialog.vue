@@ -1,5 +1,5 @@
 <template>
-    <div class="x-dialog-container" v-show="value">
+    <div class="x-dialog" v-show="value">
         <div class="mask" @click="close"></div>
         <div class="dialog">
             <div class="title">{{title}}<span @click="close">&times;</span></div>
@@ -29,7 +29,7 @@ export default {
 </script>
 
 <style lang="less">
-.x-dialog-container{
+.x-dialog{
     .mask{
         position: fixed;
         height: 100%;
@@ -52,48 +52,49 @@ export default {
         bottom: 0;
         z-index: 101;
         border-radius: 5px;
-        .title{
-            padding: 0 10px;
-            height: 30px;
+    }
+    .title{
+        padding: 0 10px;
+        height: 30px;
+        line-height: 30px;
+        font-size: 14px;
+        font-weight: bold;
+        letter-spacing: 3px;
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+        background: linear-gradient(to top left, #999999, #666666);
+        span{
+            display: inline-block;
+            float: right;
             line-height: 30px;
-            font-size: 14px;
-            font-weight: bold;
-            letter-spacing: 3px;
-            border-top-left-radius: 3px;
-            border-top-right-radius: 3px;
-            background: linear-gradient(to top, #767C84, #686F79);
-            span{
-                display: inline-block;
-                float: right;
-                cursor: pointer;
-                color: #555555;
-            }
-            span:hover{
-                color: #CCCCCC;
-            }
-            span:active{
-                color: #444444;
-            }
+            cursor: pointer;
+            color: #555555;
         }
-        .content{
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-            padding: 20px;
-            border: 1px solid #CCCCCC;
-            background-color: #FFFFFF;
+        span:hover{
+            color: #CCCCCC;
         }
-        .footer{
-            padding: 0 10px;
-            height: 40px;
-            line-height: 35px;
-            text-align: right;
-            border: 1px solid #CCCCCC;
-            border-top: none;
-            border-bottom-left-radius: 3px;
-            border-bottom-right-radius: 3px;
-            background-color: #EFEFEF;
+        span:active{
+            color: #444444;
         }
+    }
+    .content{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding: 20px;
+        border: 1px solid #CCCCCC;
+        background-color: #FFFFFF;
+    }
+    .footer{
+        padding: 0 10px;
+        height: 40px;
+        line-height: 35px;
+        text-align: right;
+        border: 1px solid #CCCCCC;
+        border-top: none;
+        border-bottom-left-radius: 3px;
+        border-bottom-right-radius: 3px;
+        background-color: #EFEFEF;
     }
 }
 </style>
