@@ -1,95 +1,86 @@
 <template>
-    <div class="x-loader-container">
-        <div class="x-loader">
-            <i></i><i></i>
+    <div class="x-circle-menu">
+        <div class="menu">
+            <div class="button"
+                 :class="{active:open}"
+                 @click="open=!open"></div>
+            <ul class="items" :class="{open:open}">
+                <li>菜单</li>
+                <li>菜单</li>
+                <li>菜单</li>
+                <li>菜单</li>
+                <li>菜单</li>
+            </ul>
         </div>
     </div>
 </template>
 
+<script type="text/javascript">
+export default {
+    data () {
+        return {
+            open: false
+        }
+    }
+}
+</script>
+
 <style lang="less">
-.x-loader-container{
-    position: fixed;
-    margin: auto;
-    width: 80px;
-    height: 80px;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    .x-loader{
+.x-circle-menu{
+    font-family: 'Lato', sans-serif;
+    text-align: center;
+    text-transform: uppercase;
+    .menu{
+        width: 100%;
+        max-width: 670px;
+        min-width: 550px;
+        margin: 70px auto;
+    }
+    .button{
         position: relative;
-        margin: 0 auto;
-        height: 20px;
-        width: 20px;
-        animation: spin 1.5s linear infinite;
-        i{
-            position: absolute;
-            display: block;
-            height: 20px;
-            width: 20px;
-            border-radius: 50%;
-        }
-        i:before, i:after{
-            position: absolute;
-            display: block;
-            content: '';
-            height: inherit;
-            width: inherit;
-            border-radius: inherit;
-        }
-        i:first-child:before{
-            background-color: rgba(52, 149, 221, 0.9);
-            animation: rotate-top-left 1.5s linear infinite;
-        }
-        i:first-child:after{
-            background: rgba(225, 73, 44, 0.9);
-            animation: rotate-top-right 1.5s linear infinite;
-        }
-        i:last-child:before{
-            background: rgba(249, 206, 43, 0.9);
-            animation: rotate-bottom-left 1.5s linear infinite;
-        }
-        i:last-child:after{
-            background-color: rgba(0, 153, 117, 0.9);
-            animation: rotate-bottom-right 1.5s linear infinite;
-        }
+        margin-left: -35px;
+        width: 70px;
+        height: 70px;
+        line-height: 70px;
+        left: 50%;
+        border-radius: 50%;
+        background:  linear-gradient(to top left, #BBBBBB, white);
     }
-}
-@keyframes spin{
-    0% { transform: rotate(0deg); }
-    50% { transform: rotate(-180deg); }
-    100% { transform: rotate(-360deg); }
-}
-@keyframes rotate-top-right{
-    0% { transform: rotate(0deg); }
-    50% {
-        transform: rotate(-180deg);
-        transform-origin: 20% 20%;
+    .button, .items{
+        transition: all 1s cubic-bezier(.87,-.41,.19,1.44);
     }
-    100% { transform: rotate(-360deg); }
-}
-@keyframes rotate-top-left {
-    0% { transform: rotate(0deg); }
-    50% {
-        transform: rotate(180deg);
-        transform-origin: 80% 20%;
+    .button:after{
+        content: '+';
     }
-    100% { transform: rotate(360deg); }
-}
-@keyframes rotate-bottom-right{
-    0% { transform: rotate(0deg); }
-    50% {
-        transform: rotate(-180deg);
-        transform-origin: 80% 80%;
+    .button.active{
+        left: 60px;
+        transform: rotate(45deg);
     }
-    100% { transform: rotate(-360deg); }
-}
-@keyframes rotate-bottom-left{
-    0% { transform: rotate(0deg); }
-    50% {
-        transform: rotate(180deg);
-        transform-origin: 20% 80%;
+    .items{
+        box-sizing: content-box;
+        margin: -68px 0 0 45%;
+        padding: 16px 10px 10px 50px;
+        list-style: none;
+        width: 0%;
+        height: 36px;
+        line-height: 36px;
+        border-radius: 36px;
+        overflow: hidden;
+        background-color: #EEEEEE;
+        box-shadow: 1px 1px 1px 1px #DCDCDC;
     }
-    100% { transform: rotate(360deg); }
+    .items.open{
+        margin: -68px 0 0 5%;
+        width: 80%;
+    }
+    .items li{
+        display: none;
+        width: 10%;
+        color: #3AB09E;
+    }
+    .items.open li{
+        display: inline-block;
+        width: 16%;
+    }
 }
 </style>
