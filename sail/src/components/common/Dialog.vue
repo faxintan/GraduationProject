@@ -13,7 +13,7 @@
 </template>
 
 <script type="text/javascript">
-import Button from './BUtton'
+import Button from './Button'
 
 export default {
     props: ['value', 'title', 'footer'],
